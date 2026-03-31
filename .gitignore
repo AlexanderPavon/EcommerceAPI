@@ -6,9 +6,9 @@ obj/
 .vs/
 *.log
 
-## Secrets
-appsettings.Development.json
+## Secrets — solo ignorar el local que tiene passwords reales
 appsettings.json
+appsettings.Development.json
 
 ## Docker
 .dockerignore
