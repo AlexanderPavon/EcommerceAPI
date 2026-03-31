@@ -70,7 +70,56 @@ Dependency direction: `API → Infrastructure → Application → Domain`
 - **Angular frontend** — added after API is complete, common enterprise stack with .NET
 - **Railway** — free tier hosting for both API and PostgreSQL
 
+## Git Commit Conventions
+
+This project follows the **Conventional Commits** specification. All commit messages must be in **English**.
+
+### Format
+
+```
+<type>(<scope>): <short description>
+
+[optional body]
+[optional footer]
+```
+
+### Types
+
+| Type | When to use |
+|---|---|
+| `feat` | A new feature or endpoint |
+| `fix` | A bug fix |
+| `refactor` | Code change that neither fixes a bug nor adds a feature |
+| `perf` | Performance improvement (e.g. adding cache) |
+| `docs` | Documentation changes only |
+| `test` | Adding or updating tests |
+| `chore` | Maintenance tasks (updating packages, config, CI) |
+| `style` | Formatting only, no logic change |
+
+### Scopes (optional but recommended)
+
+Use the module or layer name: `auth`, `products`, `cart`, `orders`, `payments`, `infra`, `domain`, `api`
+
+### Examples
+
+```
+feat(auth): add JWT refresh token endpoint
+fix(cart): prevent adding out-of-stock products
+perf(products): add Redis cache to GetProducts query
+refactor(orders): extract order total calculation to domain method
+chore: update Stripe.net package to v51
+docs: add API endpoints table to README
+test(auth): add integration tests for login handler
+```
+
+### Rules
+- Use imperative mood: "add" not "added", "fix" not "fixed"
+- Keep the description under 72 characters
+- Do not end the description with a period
+- Reference issues in the footer when applicable: `Closes #12`
+
 ## Developer Notes
 - User is learning .NET for the first time — explain concepts when introducing new ones
 - Keep explanations step-by-step, one module at a time
 - Frontend (Angular) is a future phase, focus on API first
+- Always use PowerShell syntax on Windows (no && — run commands separately)
