@@ -1,0 +1,19 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.log
+
+## Secrets
+appsettings.Development.json
+appsettings.json
+
+## Docker
+.dockerignore
+
+## Python (por el .venv)
+.venv/
+__pycache__/
+*.pyc
